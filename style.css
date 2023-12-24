@@ -222,5 +222,3 @@ body {
 .container.active .toggle-right {
     transform: translateX(200%);
 }
-
-/* Comment just for test */
