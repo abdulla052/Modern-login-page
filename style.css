@@ -17,6 +17,11 @@ body {
     height: 100vh;
 }
 
+:root {
+    --primary-color: #512da8;
+    --secondary-color: #5c6bc0;
+}
+
 .container {
     background-color: white;
     border-radius: 30px;
@@ -26,6 +31,7 @@ body {
     width: 768px;
     max-width: 100%;
     min-height: 480px;
+    transition: width 0.3s ease-in-out;
 }
 
 .container p {
@@ -133,7 +139,12 @@ body {
 }
 
 .social-icons {
+    
+    display: flex;
     margin: 20px 0;
+    width: 90%;
+    justify-content: space-evenly;
+
 }
 
 .social-icons a {
@@ -142,14 +153,13 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin: 0 3px;
     width: 40px;
     height: 40px;
-    transition: transform 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .social-icons a:hover {
-    transform: scale(1.05);
+    background-color: #eee;
 }
 
 .social-icons a:active {
@@ -221,4 +231,55 @@ body {
 
 .container.active .toggle-right {
     transform: translateX(200%);
+}
+
+.switch-span {
+    display: none;
+    margin-top: 40px;
+}
+
+.switch-span .switch-form {
+    color: #512da8;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 670px) {
+    
+    .toggle-container, .toggle, .toggle-panel {
+        display: none; /* hide the toggle elements */
+    }
+
+    .sign-in, .sign-up {
+        width: 100%; /* make the sign-in and sign-up forms take up the full width */
+        left: 0; /* reset the left positioning for the forms */
+        opacity: 1; /* ensure the forms are visible */
+        animation: none; /* disable the animation */
+    }
+
+    .switch-span {
+        display: block;
+    }
+}
+
+@media (max-width: 410px) {
+    .container .switch-span, .container .switch-form {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 388px) {
+    .container .switch-span, .container .switch-form {
+        font-size: 10px;
+    }
+
+    .form h1 {
+        font-size: 30px;
+    }
 }
